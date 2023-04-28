@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+     header {
+  background-color: black;
+  color: white;
+  padding: 8px;
+}
+
+header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+header li {
+    display: inline-block;
+}
+
+header li a {
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+header li a:hover {
+  background-color: #111;
+}
+body {
+        background-color: black;
+        color: white;
+        text-align: left;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      }
+      </style>
+    <title>Request Information</title>
+</head>
+<body>
+<!-- Header -->
+<header>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="request.html">Requests</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="tours.html">Tours</a></li>
+    </ul>
+  </header>
+  <h1 style="text-align: center;">Request Information</h1>
+  <style>
+    p {
+      text-align: left;
+      margin: 3 auto;
+      max-width: auto; /* optional: set a max-width to limit the width of the form */
+    }
+  </style>
+    <p>If you would like to get more information about taking one of these trips, fill out the form below and press submit.</p>
+
+    <form action="" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br><br>
+
+        <label for="tour">     .</label>
+        <select id="tour" name="tour">
+            <option value="">See Israel</option>
+            <option value="Tour 1">Tour 1</option>
+            <option value="Tour 2">Tour 2</option>
+            <option value="Tour 3">Tour 3</option>
+        </select><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const name = form.elements.name.value;
+            const email = form.elements.email.value;
+            const tour = form.elements.tour.value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            // Check for errors
+            let errorMessage = '';
+            if (name === '') {
+                errorMessage += 'Name is required.\n';
+            }
+            if (email === '') {
+                errorMessage += 'Email is required.\n';
+            }
+            if (!emailRegex.test(email)) {
+                errorMessage += 'Email must contain "@" and "."\n';
+            }
+            if (tour === '') {
+                errorMessage += 'Please select a tour.\n';
+            }
+
+            // Display error message or thank you message
+            if (errorMessage !== '') {
+                alert(errorMessage);
+            } else {
+                alert('Thank you for your request, ' + name + '!');
+                form.reset();
+            }
+        });
+    </script>
+<br>
+    <p style="text-align: center;">Contact North Travels at <a href="mailto:info@northtravels.com">info@northtravels.com</a></p>
+</body>
+</html>

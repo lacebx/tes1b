@@ -1,0 +1,107 @@
+<!<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title></title>
+
+<style>
+  header {
+  background-color: black;
+  color: white;
+  padding: 8px;
+}
+
+header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+header li {
+    display: inline-block;
+}
+
+header li a {
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+header li a:hover {
+  background-color: #1fd4e0;
+}
+  body {
+    background-color: black;
+    color: white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  div {
+    text-align: center;
+  }
+  p:last-of-type::before {
+    content: "• ";
+  }
+  .image-text {
+    text-align: left;
+  }
+  .more-images {
+    display: none;
+  }
+</style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="request.html">Requests</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="tours.html">Tours</a></li>
+    </ul>
+  </header>
+<div>
+  <h1>North Travels</h1>
+  <p>"Once you have visited the Holy Lands you will never hear a sermon, sing a song, listen to a Bible class lesson or read the scriptures in the same way."</p>
+  <img src="images/greece_300_225.jpg" alt="Parthenon on the Acropolis in Athens.">
+  <img src="images/david_bev_cammel_300_225.jpg" alt="David and Beverly on a cammel at the pyramids in Cairo.">
+  <img src="images/david_bev_jerusalem.jpg" alt="David and Beverly in Jerusalem looking over the temple mount">
+  <button id="show-more-btn">Show More</button>
+  <div class="more-images">
+    <img src="images/jordan_300_225.jpg" alt="Parthenon on the Acropolis in Athens.">
+    <img src="images/israel_300_225.jpg" alt="David and Beverly on a cammel at the pyramids in Cairo.">
+    <img src="images/egypt_300_225.jpg" alt="David and Beverly in Jerusalem looking over the temple mount">
+    </div>
+  <button id="show-less-btn" style="display: none;">Show Less</button>
+
+  <script>
+    const showMoreBtn = document.getElementById('show-more-btn');
+    const showLessBtn = document.getElementById('show-less-btn');
+    const moreImagesDiv = document.querySelector('.more-images');
+  
+    showMoreBtn.addEventListener('click', () => {
+      moreImagesDiv.style.display = 'block';
+      showMoreBtn.style.display = 'none';
+      showLessBtn.style.display = 'block';
+    });
+  
+    showLessBtn.addEventListener('click', () => {
+      moreImagesDiv.style.display = 'none';
+      showLessBtn.style.display = 'none';
+      showMoreBtn.style.display = 'block';
+    });
+  </script> 
+  
+  
+  <p class="image-text">You can have a great life experience visiting the Holy Lands. You can walk up steps that Jesus walked on, you can walk on the roads that Paul walked on, and you can see sites that Moses saw.  It will be an experience you will never forget. We are talking these trips this year:</p>
+  <p class="image-text">• See Israel - April 15-23 - make a 9 day trip to Israel</p>
+  <p class="image-text">• See Holy Lands - June 1-22 - make a 21 day trip to Israel, Jordan, Egypt, Greece and Turkey.</p>
+  <p class="image-text"> See Museums - September 1-14 - make a 14 day tour of 5 great museums in London, Paris, Athens, Cairo and Jerusalem.</p>
+</div>
+<br>
+<p style="text-align: center;">Contact North Travels at <a href="mailto:info@northtravels.com">info@northtravels.com</a></p>
+</body>
+</html>

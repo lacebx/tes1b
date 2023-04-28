@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Tours</title>
+<style>
+   header {
+  background-color: black;
+  color: white;
+  padding: 8px;
+}
+
+header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+header li {
+    display: inline-block;
+}
+
+header li a {
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+header li a:hover {
+  background-color: #111;
+}
+body {
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+.accordion {
+  /* other styles */
+  margin: 0 auto;
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.active, .accordion:hover {
+  background-color: rgb(49, 47, 47);
+}
+
+.panel {
+    color: black;   
+  max-height: 0;
+  padding: 0 18px;
+  background-color: white;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  text-align: right;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.accordion:hover + .panel {
+  max-height: 500px; /* set a maximum height for the panel to expand */
+  transition: max-height 0.2s ease-out;
+}
+
+.panel-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.panel img {
+  float: left;
+  margin-right: 10px;
+}
+
+</style>
+</head>
+<body>
+<!-- Header -->
+<header>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="request.html">Requests</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="tours.html">Tours</a></li>
+  </ul>
+</header>
+<h1>Tours</h1>
+
+<p>"Once you have visited the Holy Lands you will never hear a sermon, sing a song, listen to a Bible class lesson or read the scriptures in the same way."</p>
+
+<p>You can have a great life experience visiting the Holy Lands. You can walk up steps that Jesus walked on, you can walk on the roads that Paul walked on, and you can see sites that Moses saw. It will be an experience you will never forget. We are offering these trips this year:</p>
+
+<button class="accordion">See Israel - April 15-23</button>
+<div class="panel">
+  <img src="images/david_bev_jerusalem.jpg" alt="Jerusalem" style="width:200px;height:150px;">
+  <p>On this 9 day trip to Israel you will visit the best biblical sites in Israel. They include Jerusalem, Capernaum, Caesarea, Mt. Carmel, Megiddo, Masada, and Bethlehem, Jordan River and the Sea of Galilee.</p>
+</div>
+
+<button class="accordion">See Holy Lands - June 1-22</button>
+<div class="panel">
+  <img src="images/greece_300_225.jpg" alt="Greece" style="width:200px;height:150px;">
+  <p>On this 21 day trip to Israel, Jordan, Egypt, Greece and Turkey you will see the greatest sites related to Biblical history including the Temple Mount in Jerusalem, Petra in Jordan, the Pyramids in Egypt, Ephesus in Turkey and the Acropolis in Athens.</p>
+</div>
+
+<button class="accordion">See Museums - September 1-14</button>
+<div class="panel">
+  <img src="images/british_museum_300_225.jpg" alt="British Museum" style="width:200px;height:150px;">
+  <p>On this 14 day tour of 5 great museums in London, Paris, Athens, Cairo and Jerusalem you will visit the great museums with Bible artifacts. In the British Museum you will see the Rosetta Stone, the Elgin Marbles, Lachish freeze, and the Cyrus cylinder. In the Louvre you will see the Code of Hammurabi, the Moabite stone and glazed brick walls from the palace of Susa. In Athens you will see many remains from the Acropolis. In the Cairo Museum you will see the treasures of King Tut and the Merneptah Steele. In the Israel Museum you will see the oldest written scriptures and the Tel Dan inscription with King David's name on it.</p>
+</div>
+
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        /* Toggle between adding and removing the "active" class,
+        to highlight the button that controls the panel */
+        this.classList.toggle("active");
+    
+        /* Toggle between hiding and showing the active panel */
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    }
+    </script>
+<br>
+    <p style="text-align: center;">Contact North Travels at <a href="mailto:info@northtravels.com">info@northtravels.com</a></p>
+    </body>
+    </html>
+    
